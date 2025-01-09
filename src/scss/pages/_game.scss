@@ -1,0 +1,130 @@
+.game {
+  @include flex-center;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(40, 40, 40, 1)
+    radial-gradient(
+      ellipse at center top,
+      rgba(40, 80, 60, 1),
+      rgba(0, 20, 20, 0.6)
+    );
+  height: 100vh;
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    & button {
+      @include button;
+      width: auto;
+      font-size: small;
+      margin: 10px 10px 0 10px;
+    }
+  }
+
+  &__players {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    color: $white;
+    font-family: $primary-font;
+    &--box {
+      @include flex-center;
+      flex-direction: column;
+      & p {
+        margin: 0;
+        font-size: large;
+      }
+      & h3 {
+        margin: 1.6rem 0 0 0;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &__message {
+    color: $white;
+    font-family: $primary-font;
+    letter-spacing: 1px;
+    text-align: center;
+    & h3 {
+      margin: 8px 0 0 0;
+    }
+    & p {
+      font-size: small;
+    }
+    & button {
+      @include button;
+      font-family: $primary-font;
+      font-size: small;
+      width: auto;
+    }
+  }
+
+  &__board {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+    margin-top: 2rem;
+
+    &--box {
+      border: solid 2px $white;
+      @include flex-center;
+      font-family: $primary-font;
+      color: $white;
+      font-size: 80px;
+
+      &:nth-child(1) {
+        border-top: none;
+        border-left: none;
+      }
+      &:nth-child(7) {
+        border-bottom: none;
+        border-left: none;
+      }
+      &:nth-child(4) {
+        border-left: none;
+      }
+
+      &:nth-child(3) {
+        border-top: none;
+        border-right: none;
+      }
+      &:nth-child(9) {
+        border-bottom: none;
+        border-right: none;
+      }
+      &:nth-child(6) {
+        border-right: none;
+      }
+
+      &:nth-child(2) {
+        border-top: none;
+      }
+      &:nth-child(8) {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__chat {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .game {
+    width: 360px;
+    height: 95vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    overflow: scroll;
+  }
+}
+
+@media screen and (min-height: 530px) {
+  .game {
+    height: 100vh;
+  }
+}

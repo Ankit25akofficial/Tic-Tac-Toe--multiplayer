@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Architects+Daughter&display=swap');
+
+@import 'variables';
+@import 'mixins';
+
+@import 'pages/home';
+@import 'pages/game';
+
+@import 'components/chats';
+@import 'components/loader';
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+html {
+  overflow: scroll;
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    @include flex-center;
+    padding-top: 1rem;
+  }
+}

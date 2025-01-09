@@ -1,0 +1,21 @@
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin button {
+  font-family: $secondary-font;
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  background-color: transparent;
+  border: ridge 1px $white;
+  border-radius: 30px;
+  outline: none;
+  color: $white;
+  padding: 0.4rem 0.6rem;
+  width: 100%;
+  cursor: pointer;
+}
