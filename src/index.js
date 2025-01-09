@@ -1,20 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { ContextProvider } from './context/GlobalContext';
-import * as serviceWorker from './serviceWorker';
+import firebase from 'firebase/app';
+import 'firebase/database';
+import 'firebase/firestore';
 
-ReactDOM.render(
-  <ContextProvider>
-    <App />
-  </ContextProvider>,
-  document.getElementById('root')
-);
+const firebaseConfig = {
+  apiKey: 'AIzaSyBc41Z0f4aKIItvk4Vxnml7oPjxT66Nkqc',
+  authDomain: 'tic-tac-champ.firebaseapp.com',
+  databaseURL: 'https://tic-tac-champ-default-rtdb.firebaseio.com',
+  projectId: 'tic-tac-champ',
+  storageBucket: 'tic-tac-champ.appspot.com',
+  messagingSenderId: '195257038336',
+  appId: '1:195257038336:web:2e4a92a3479cf3da3a4ae5',
+  measurementId: 'G-9JXJ5EFLWZ',
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+firebase.initializeApp(firebaseConfig);
 
-serviceWorker.register();
+const database = firebase.database();
+const firestore = firebase.firestore();
+
+export { database, firestore };
