@@ -1,14 +1,6 @@
-<div align="center">
-  <br>
+
   <h1>Online Tic Tac Toe</h1>
   <strong>Play with your friends!</strong>
-</div>
-<br>
-<p align="center">
-  
-
-
-</p>
 
 Create an online room and invite your friends to play tic tac toe online!
 
